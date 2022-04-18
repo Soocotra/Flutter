@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="280.394" height="123.671" viewBox="0 0 280.394 123.671">
+  <defs>
+    <filter id="PustakaO" x="0" y="0" width="280.394" height="123.671" filterUnits="userSpaceOnUse">
+      <feOffset dy="3.088" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.544" result="blur"/>
+      <feFlood flood-color="#2e6dc3" flood-opacity="0.502"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#PustakaO)">
+    <text id="PustakaO-2" data-name="PustakaO" transform="matrix(0.99, 0.11, -0.11, 0.99, 137.37, 83.59)" stroke="#fff" stroke-miterlimit="10" stroke-width="0.593" font-size="67" font-family="Lobster-Regular, Lobster" fill="none"><tspan x="-130.751" y="0">PustakaO</tspan></text>
+  </g>
+</svg>

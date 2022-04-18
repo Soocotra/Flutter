@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="215.721" height="215.721" viewBox="0 0 215.721 215.721">
+  <defs>
+    <filter id="Ellipse_3" x="0" y="0" width="215.721" height="215.721" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feFlood flood-opacity="0.4"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#58a0ff"/>
+      <stop offset="0.454" stop-color="#5888ff"/>
+      <stop offset="1" stop-color="#5966ff"/>
+    </linearGradient>
+    <filter id="Ellipse_4" x="13.849" y="13.849" width="188.024" height="188.024" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur-2"/>
+      <feFlood flood-opacity="0.4"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="login_logo" transform="translate(1635.373 -700.591)">
+    <g id="Group_6" data-name="Group 6" transform="translate(509 -834)">
+      <g id="Group_61" data-name="Group 61">
+        <g transform="matrix(1, 0, 0, 1, -2144.37, 1534.59)" filter="url(#Ellipse_3)">
+          <circle id="Ellipse_3-2" data-name="Ellipse 3" cx="103.36" cy="103.36" r="103.36" transform="translate(2.5 2.5)" fill="#eff3f8"/>
+        </g>
+      </g>
+      <g id="Group_62" data-name="Group 62">
+        <g transform="matrix(1, 0, 0, 1, -2144.37, 1534.59)" filter="url(#Ellipse_4)">
+          <circle id="Ellipse_4-2" data-name="Ellipse 4" cx="89.512" cy="89.512" r="89.512" transform="translate(16.35 16.35)" fill="url(#linear-gradient)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
