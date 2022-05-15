@@ -196,7 +196,7 @@ class PreviewPage extends StatelessWidget {
                                 margin: EdgeInsets.only(right: 6),
                                 child: ListView(children: [
                                   Text(
-                                    "${book.sinopsis}",
+                                    book.sinopsis,
                                     textAlign: TextAlign.justify,
                                     style: TextStyle(
                                         fontSize: 13.4, fontFamily: 'Poppins'),
