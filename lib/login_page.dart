@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:project_dicoding/auth_service.dart';
 import 'package:project_dicoding/book_list.dart';
 import 'package:project_dicoding/home_page.dart';
 
@@ -108,8 +109,9 @@ class _LoginPageState extends State<LoginPage> {
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Container(
                   child: TextButton(
-                    onPressed: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage())),
+                    onPressed: () async {
+                      await AuthServices.SignInAnonymous();
+                    },
                     child: Text(
                       'Login as Guest',
                       style: TextStyle(
@@ -140,12 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                 margin: EdgeInsets.only(left: 73.1, right: 73.1, bottom: 10.5),
                 child: ElevatedButton(
                   onPressed: (u_name.text.isNotEmpty && pswrd.text.isNotEmpty)
-                      ? () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomePage()));
-                        }
+                      ? () {}
                       : null,
                   style: ElevatedButton.styleFrom(
                     primary: HexColor('#1B1464'),
