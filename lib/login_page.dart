@@ -17,8 +17,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController u_name = TextEditingController();
-  TextEditingController pswrd = TextEditingController();
+  TextEditingController email = TextEditingController(text: "");
+  TextEditingController pswrd = TextEditingController(text: "");
 
   void listener(TextEditingController variable) {
     variable.addListener(() {
@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    listener(u_name);
+    listener(email);
     listener(pswrd);
 
     return Scaffold(
@@ -126,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 39.27,
                   width: 285.64,
                   margin: EdgeInsets.fromLTRB(73.1, 26.8, 73.1, 21.7),
-                  child: txtField(data: u_name, label: "Username")),
+                  child: txtField(data: email, label: "Email")),
               Container(
                   height: 39.27,
                   width: 285.64,
@@ -141,8 +141,11 @@ class _LoginPageState extends State<LoginPage> {
                 height: 43.12,
                 margin: EdgeInsets.only(left: 73.1, right: 73.1, bottom: 10.5),
                 child: ElevatedButton(
-                  onPressed: (u_name.text.isNotEmpty && pswrd.text.isNotEmpty)
-                      ? () {}
+                  onPressed: (email.text.isNotEmpty && pswrd.text.isNotEmpty)
+                      ? () async {
+                          await AuthServices.SignInEmailPass(
+                              email.text, pswrd.text, context);
+                        }
                       : null,
                   style: ElevatedButton.styleFrom(
                     primary: HexColor('#1B1464'),

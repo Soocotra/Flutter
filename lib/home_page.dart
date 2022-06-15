@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:project_dicoding/drawer.dart';
 import 'package:project_dicoding/preview_page.dart';
 import 'book_list.dart';
 
@@ -9,47 +10,54 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [
-        Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-              gradient: RadialGradient(
-                  colors: [HexColor("#00C3FF"), HexColor("#006AC2")])),
-        ),
-        Center(
-          child: Column(children: [
-            Flexible(
-              child: Container(
-                  margin: EdgeInsets.only(top: 30, bottom: 12),
-                  width: 120 * 2,
-                  child: Image.asset(
-                      "assets/images/logo2/drawable-hdpi/Logo.png")),
-            ),
-            Flexible(
-              flex: 3,
-              child: Container(
-                  margin: EdgeInsets.fromLTRB(29.5, 0, 29.5, 0),
-                  width: 427.74,
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                          colors: [HexColor('#C6F8FF'), HexColor('#FFFFFF')]),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20))),
-                  child: MediaQuery.removePadding(
-                    context: context,
-                    removeTop: true,
-                    child: BookList(
-                      key: key,
-                    ),
-                  )),
-            )
-          ]),
-        )
-      ]),
+      appBar: AppBar(
+        backgroundColor: HexColor("#006AC2"),
+        elevation: 0,
+      ),
+      drawer: SideBar(context),
+      body: SafeArea(
+        child: Stack(children: [
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+                gradient: RadialGradient(
+                    colors: [HexColor("#00C3FF"), HexColor("#006AC2")])),
+          ),
+          Center(
+            child: Column(children: [
+              Flexible(
+                child: Container(
+                    margin: EdgeInsets.only(bottom: 12),
+                    width: 240,
+                    child: Image.asset(
+                        "assets/images/logo2/drawable-hdpi/Logo.png")),
+              ),
+              Flexible(
+                flex: 3,
+                child: Container(
+                    margin: EdgeInsets.fromLTRB(29.5, 0, 29.5, 0),
+                    width: 427.74,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            colors: [HexColor('#C6F8FF'), HexColor('#FFFFFF')]),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20))),
+                    child: MediaQuery.removePadding(
+                      context: context,
+                      removeTop: true,
+                      child: BookList(
+                        key: key,
+                      ),
+                    )),
+              )
+            ]),
+          )
+        ]),
+      ),
     );
   }
 }
