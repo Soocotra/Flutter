@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:project_dicoding/book_list.dart';
+import 'package:project_dicoding/drawer.dart';
 
 class PreviewPage extends StatelessWidget {
   final Books book;
@@ -14,6 +15,7 @@ class PreviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: SideBar(context),
         backgroundColor: HexColor("#006AC2"),
         body: Column(
           children: [
