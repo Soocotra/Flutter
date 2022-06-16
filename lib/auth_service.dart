@@ -1,9 +1,7 @@
-import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_dicoding/sign_up.dart';
 
 class AuthServices {
   static FirebaseAuth _auth = FirebaseAuth.instance;
@@ -20,6 +18,22 @@ class AuthServices {
     }
   }
 
+  static Future<User?> SignUp(email, password, BuildContext context) async {
+    try {
+      UserCredential result = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      User firebaseUser = result.user!;
+
+      return firebaseUser;
+    } on FirebaseAuthException catch (e) {
+      showDialog(
+          context: context,
+          builder: (_) =>
+              alertDialog(context: context, message: Text("${e.message}")));
+      return null;
+    }
+  }
+
   static Future<User?> SignInEmailPass(
       email, password, BuildContext context) async {
     try {
@@ -32,17 +46,8 @@ class AuthServices {
       print(e);
       showDialog(
           context: context,
-          builder: (_) => CupertinoAlertDialog(
-                  title: Text("Error"),
-                  content: Text("${e.message}"),
-                  actions: [
-                    CupertinoDialogAction(
-                      child: Text("YES"),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    )
-                  ]));
+          builder: (_) =>
+              alertDialog(context: context, message: Text("${e.message}")));
       return null;
     }
   }

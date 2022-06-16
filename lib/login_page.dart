@@ -6,6 +6,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:project_dicoding/auth_service.dart';
 import 'package:project_dicoding/book_list.dart';
 import 'package:project_dicoding/home_page.dart';
+import 'package:project_dicoding/sign_up.dart';
 
 import 'customshape.dart';
 
@@ -168,7 +169,10 @@ class _LoginPageState extends State<LoginPage> {
                     color: HexColor('#666666')),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignUp()));
+                },
                 child: Text(
                   "Create an account",
                   style: TextStyle(
